@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtp2_lib.a CMakeFiles/tp2_lib.dir/src/ParticuleA.cpp.o CMakeFiles/tp2_lib.dir/src/StormerVerlet.cpp.o
+/opt/homebrew/opt/llvm/bin/llvm-ranlib libtp2_lib.a

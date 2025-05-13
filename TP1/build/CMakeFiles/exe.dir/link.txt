@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wextra -Wall -O2 CMakeFiles/exe.dir/trace.cxx.o -o exe 

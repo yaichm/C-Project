@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wextra -Wall -O2 CMakeFiles/euler.dir/euler.cxx.o -o euler 
