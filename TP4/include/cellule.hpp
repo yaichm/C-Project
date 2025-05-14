@@ -14,6 +14,7 @@ class Cellule{
         Cellule( const vector<size_t>& indices, const vector<ParticuleA*> &particules);
         void setIndices(vector<size_t>& indices);
         vector<size_t> getIndices();
+        Cellule();
         
 };
 

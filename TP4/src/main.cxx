@@ -1,38 +1,49 @@
 #include <iostream>
-#include <vector>
 #include "Univers.hpp"
+#include "cellule.hpp"
+
+using namespace std;
 
 int main() {
     // Dimensions de l'univers (par exemple, 10.0 unités de long pour chaque dimension)
-    vector<double> dimensions = {10.0, 10.0};
+    std::vector<double> dimensions = {10.0, 10.0};
     double sigma = 1.0;   // Valeur arbitraire pour sigma
     double r_cut = 2.0;   // Valeur arbitraire pour r_cut (distance maximale d'interaction)
 
     // Création d'un objet Univers avec les paramètres définis
-    Univers Univers(dimensions, sigma, r_cut);
+    Univers monUnivers(dimensions, sigma, r_cut);
 
-    // Construction du voisinage pour toutes les cellules
-    Univers.buildVoisinage(Univers.getTotalCells());
+    // Affichage des dimensions et du nombre total de cellules
+    std::cout << "Dimensions de l'univers : ";
+    for (auto dim : monUnivers.getDimensions()) {
+        std::cout << dim << " ";
+    }
+    std::cout << std::endl;
 
-    // Affichage des voisins pour la première cellule (indice 0)
-    const auto& voisins = Univers.getVoisinage(0);
-    cout << "Voisins de la cellule (0, 0) :\n";
-    for (const auto& voisin : voisins) {
-        cout << "(";
-        for (size_t d = 0; d < voisin.size(); ++d) {
-            cout << voisin[d];
-            if (d < voisin.size() - 1) cout << ", ";
+    std::cout << "Nombre total de cellules : " << monUnivers.getTotalCells() << std::endl;
+
+    // Affichage des indices de la première cellule
+    vector<size_t> idx = {1, 0};
+    auto& cellule0 = monUnivers.cellule(idx);
+    cout << "Indices de la cellule (1, 0) : ";
+    for (auto val : cellule0.getIndices()) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    // Test de la méthode getVoisinage pour la première cellule
+    monUnivers.buildVoisinage(monUnivers.getTotalCells());
+
+    // printer les voisins de la premiere cellule
+    size_t indx = 8;
+    for (auto var : monUnivers.getVoisinage(indx))
+    {
+        cout << "Le voisin \n";
+        for (auto h : var)
+        {
+            cout << h << " ";
         }
-        cout << ")\n";
+        cout << endl;
     }
-
-    // Affichage des indices de la cellule 0
-    cout << "\nIndices de la cellule 0 : ";
-    const auto& idx = Univers.cellule({0, 0}).getIndices();
-    for (size_t d = 0; d < idx.size(); ++d) {
-        cout << idx[d] << " ";
-    }
-    cout << endl;
-
     return 0;
 }

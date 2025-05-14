@@ -1,17 +1,12 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.10)
+project(TP4)
 
-project(MyProject)
-
-find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
-
-# include_directories(${PROJECT_SOURCE_DIR}/../../../libs/matplotlib-cpp)
-
-include_directories(${Python3_INCLUDE_DIRS})
+set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
-# add_executable(lj_plot src/lj_plot.cxx)
 
-add_executable(main src/main.cxx)
-
-# target_link_libraries(lj_plot PRIVATE ${Python3_LIBRARIES})
-
+add_executable(main
+    src/main.cxx
+    src/univers.cxx
+    src/cellule.cxx
+)

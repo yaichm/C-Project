@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/python3.10 -I/home/yaich/Final/CPP/TP4/include
+CXX_INCLUDES = -I/home/yaich/Final/CPP/TP4/include
 
 CXX_FLAGS = 
 

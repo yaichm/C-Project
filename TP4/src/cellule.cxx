@@ -12,3 +12,7 @@ void Cellule::setIndices(vector<size_t>& indices){
 vector<size_t> Cellule::getIndices(){
         return indices;
 }
+
+Cellule::Cellule() {
+
+}

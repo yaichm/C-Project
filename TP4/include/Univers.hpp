@@ -21,7 +21,8 @@ class Univers{
         Cellule& cellule(const vector<size_t>& idx);
         void buildVoisinage(size_t nb_Cellues);
         size_t getTotalCells();
-        vector<vector <size_t>> getVoisinage(size_t indx); 
+        vector<vector <size_t>> getVoisinage(size_t indx);
+        vector<size_t> getDimensions(); 
         
 };
 

@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/cellule.o: src/cellule.cxx.o
+.PHONY : src/cellule.o
+
+# target to build an object file
+src/cellule.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/cellule.cxx.o
+.PHONY : src/cellule.cxx.o
+
+src/cellule.i: src/cellule.cxx.i
+.PHONY : src/cellule.i
+
+# target to preprocess a source file
+src/cellule.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/cellule.cxx.i
+.PHONY : src/cellule.cxx.i
+
+src/cellule.s: src/cellule.cxx.s
+.PHONY : src/cellule.s
+
+# target to generate assembly for a file
+src/cellule.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/cellule.cxx.s
+.PHONY : src/cellule.cxx.s
+
 src/main.o: src/main.cxx.o
 .PHONY : src/main.o
 
@@ -153,6 +177,30 @@ src/main.cxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.s
 .PHONY : src/main.cxx.s
 
+src/univers.o: src/univers.cxx.o
+.PHONY : src/univers.o
+
+# target to build an object file
+src/univers.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/univers.cxx.o
+.PHONY : src/univers.cxx.o
+
+src/univers.i: src/univers.cxx.i
+.PHONY : src/univers.i
+
+# target to preprocess a source file
+src/univers.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/univers.cxx.i
+.PHONY : src/univers.cxx.i
+
+src/univers.s: src/univers.cxx.s
+.PHONY : src/univers.s
+
+# target to generate assembly for a file
+src/univers.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/univers.cxx.s
+.PHONY : src/univers.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/cellule.o"
+	@echo "... src/cellule.i"
+	@echo "... src/cellule.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/univers.o"
+	@echo "... src/univers.i"
+	@echo "... src/univers.s"
 .PHONY : help
 
 
