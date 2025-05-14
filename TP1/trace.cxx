@@ -30,6 +30,12 @@ int main() {
   sum = trace(matrix, n);
   print_matrix(matrix, n);
   cout << endl << "Sum of the diagonal elements are: " << *sum<< endl;
+
+  for (int i=0; i<n; i++){
+    free(matrix[i]);
+  }
+  free(matrix);
+  free(sum);
   return 0;
 }
 
@@ -70,6 +76,7 @@ void print_matrix(double **mat,int n){
       cout << "\n" << endl;
   }
 }
+
 
 /// @brief Calcul la trace d'une matrice
 /// @param[in] matrix est la matrice dont on souhaite connaître la trace.

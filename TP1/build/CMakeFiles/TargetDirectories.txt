@@ -1,4 +1,4 @@
-/home/yaich/repostory/TP1/build/CMakeFiles/exe.dir
-/home/yaich/repostory/TP1/build/CMakeFiles/euler.dir
-/home/yaich/repostory/TP1/build/CMakeFiles/edit_cache.dir
-/home/yaich/repostory/TP1/build/CMakeFiles/rebuild_cache.dir
+/home/yaich/Final/CPP/TP1/build/CMakeFiles/exe.dir
+/home/yaich/Final/CPP/TP1/build/CMakeFiles/euler.dir
+/home/yaich/Final/CPP/TP1/build/CMakeFiles/edit_cache.dir
+/home/yaich/Final/CPP/TP1/build/CMakeFiles/rebuild_cache.dir
