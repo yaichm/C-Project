@@ -4,11 +4,14 @@ project(MyProject)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 
-include_directories(${PROJECT_SOURCE_DIR}/../../../libs/matplotlib-cpp)
+# include_directories(${PROJECT_SOURCE_DIR}/../../../libs/matplotlib-cpp)
 
 include_directories(${Python3_INCLUDE_DIRS})
 
-add_executable(lj_plot src/lj_plot.cxx)
+include_directories(include)
+# add_executable(lj_plot src/lj_plot.cxx)
 
-target_link_libraries(lj_plot PRIVATE ${Python3_LIBRARIES})
+add_executable(main src/main.cxx)
+
+# target_link_libraries(lj_plot PRIVATE ${Python3_LIBRARIES})
 

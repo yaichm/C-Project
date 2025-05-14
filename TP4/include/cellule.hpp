@@ -1,17 +1,20 @@
 #ifndef CELLULE_HPP
 #define CELLULE_HPP
 #include "Particule.hpp"
+#include "vecteur.hpp"
 #include <vector>
 
 using namespace std;
 
-class cellule{
+class Cellule{
     private:
-        vector<ParticuleA> liste_particules_propres;
-        int n_dimension;
-        vector<cellule> liste_cellules_voisin;
+        vector<size_t> indices;
+        vector<ParticuleA*>  particules;
     public:
-        cellule(vector<ParticuleA> &liste_prticules_propres, vector<cellule> & cellues, int n_dimenson);        
+        Cellule( const vector<size_t>& indices, const vector<ParticuleA*> &particules);
+        void setIndices(vector<size_t>& indices);
+        vector<size_t> getIndices();
+        
 };
 
 

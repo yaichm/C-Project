@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lj_plot
+# Target rules for targets named main
 
 # Build rule for target.
-lj_plot: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lj_plot
-.PHONY : lj_plot
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-lj_plot/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lj_plot.dir/build.make CMakeFiles/lj_plot.dir/build
-.PHONY : lj_plot/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-src/lj_plot.o: src/lj_plot.cxx.o
-.PHONY : src/lj_plot.o
+src/main.o: src/main.cxx.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/lj_plot.cxx.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lj_plot.dir/build.make CMakeFiles/lj_plot.dir/src/lj_plot.cxx.o
-.PHONY : src/lj_plot.cxx.o
+src/main.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.o
+.PHONY : src/main.cxx.o
 
-src/lj_plot.i: src/lj_plot.cxx.i
-.PHONY : src/lj_plot.i
+src/main.i: src/main.cxx.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/lj_plot.cxx.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lj_plot.dir/build.make CMakeFiles/lj_plot.dir/src/lj_plot.cxx.i
-.PHONY : src/lj_plot.cxx.i
+src/main.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.i
+.PHONY : src/main.cxx.i
 
-src/lj_plot.s: src/lj_plot.cxx.s
-.PHONY : src/lj_plot.s
+src/main.s: src/main.cxx.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/lj_plot.cxx.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lj_plot.dir/build.make CMakeFiles/lj_plot.dir/src/lj_plot.cxx.s
-.PHONY : src/lj_plot.cxx.s
+src/main.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.s
+.PHONY : src/main.cxx.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... lj_plot"
-	@echo "... src/lj_plot.o"
-	@echo "... src/lj_plot.i"
-	@echo "... src/lj_plot.s"
+	@echo "... main"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

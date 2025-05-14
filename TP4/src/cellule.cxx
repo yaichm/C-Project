@@ -1,6 +1,14 @@
 #include "cellule.hpp"
 
 
-cellule::cellule(vector<ParticuleA> &listes_particules, vector<cellule> &listes_cellules, int n_dimension )
-        : n_dimension(n_dimension), liste_cellules_voisin(listes_cellules), liste_particules_propres(listes_particules){}
+//Constructeur de cellule
 
+Cellule::Cellule(const vector<size_t>& indx_cellule, const vector<ParticuleA*> &particules)
+        : indices(indx_cellule), particules(particules){} 
+
+void Cellule::setIndices(vector<size_t>& indices){
+        indices = indices;
+}
+vector<size_t> Cellule::getIndices(){
+        return indices;
+}
