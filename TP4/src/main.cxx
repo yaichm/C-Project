@@ -39,11 +39,7 @@ int main() {
     for (auto var : monUnivers.getVoisinage(indx))
     {
         cout << "Le voisin \n";
-        for (auto h : var)
-        {
-            cout << h << " ";
-        }
-        cout << endl;
+        cout << var <<endl;
     }
     return 0;
 }

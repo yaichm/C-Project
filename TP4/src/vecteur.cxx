@@ -70,6 +70,13 @@ Vecteur& Vecteur::operator+=(const Vecteur& v) {
     return *this;
 }
 
+Vecteur& Vecteur::operator-=(const Vecteur& v) {
+    x -= v.x;
+    y -= v.y;
+    z -= v.z;
+    return *this;
+}
+
 // Fonctions amies
 ostream& operator<<(ostream& out, const Vecteur& v) {
     out << "Vecteur : ";

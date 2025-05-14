@@ -40,10 +40,11 @@ public:
 
     Vecteur operator*(double d) const;
     Vecteur &operator+=(const Vecteur &vect);
+    Vecteur &operator-=(const Vecteur &vect);
 
-    // Surcharge des flux pour afficher et lire le vecteur
     friend std::ostream &operator<<(std::ostream &out, const Vecteur &v);
     friend std::istream &operator>>(std::istream &in, Vecteur &v);
+    
 };
 
 Vecteur testVecteur();
