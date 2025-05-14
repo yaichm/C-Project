@@ -177,6 +177,30 @@ src/main.cxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.s
 .PHONY : src/main.cxx.s
 
+src/particule.o: src/particule.cxx.o
+.PHONY : src/particule.o
+
+# target to build an object file
+src/particule.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/particule.cxx.o
+.PHONY : src/particule.cxx.o
+
+src/particule.i: src/particule.cxx.i
+.PHONY : src/particule.i
+
+# target to preprocess a source file
+src/particule.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/particule.cxx.i
+.PHONY : src/particule.cxx.i
+
+src/particule.s: src/particule.cxx.s
+.PHONY : src/particule.s
+
+# target to generate assembly for a file
+src/particule.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/particule.cxx.s
+.PHONY : src/particule.cxx.s
+
 src/univers.o: src/univers.cxx.o
 .PHONY : src/univers.o
 
@@ -201,6 +225,30 @@ src/univers.cxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/univers.cxx.s
 .PHONY : src/univers.cxx.s
 
+src/vecteur.o: src/vecteur.cxx.o
+.PHONY : src/vecteur.o
+
+# target to build an object file
+src/vecteur.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/vecteur.cxx.o
+.PHONY : src/vecteur.cxx.o
+
+src/vecteur.i: src/vecteur.cxx.i
+.PHONY : src/vecteur.i
+
+# target to preprocess a source file
+src/vecteur.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/vecteur.cxx.i
+.PHONY : src/vecteur.cxx.i
+
+src/vecteur.s: src/vecteur.cxx.s
+.PHONY : src/vecteur.s
+
+# target to generate assembly for a file
+src/vecteur.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/vecteur.cxx.s
+.PHONY : src/vecteur.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,9 +264,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/particule.o"
+	@echo "... src/particule.i"
+	@echo "... src/particule.s"
 	@echo "... src/univers.o"
 	@echo "... src/univers.i"
 	@echo "... src/univers.s"
+	@echo "... src/vecteur.o"
+	@echo "... src/vecteur.i"
+	@echo "... src/vecteur.s"
 .PHONY : help
 
 
