@@ -1,9 +1,3 @@
-/// Code élémentaire pour le calcul de la trace d'une matrice.
-/// Printemps 2022
-/// Objectif : manipuler les éléments de base du C++
-///            utiliser des outils de profiling et de débogage
-/// ref: l'exercice est inspiré très largement de ressources WWW
-
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
@@ -16,7 +10,6 @@ double *SolveImplicite(int n);
 double *SolveExpliciteEDO(int n);
 
 
-/// Driver principal pour le calcul de la tace d'une matrice
 int main() {
 
   cout << endl << "the solution for Euler explicite " << endl << flush;
@@ -36,13 +29,17 @@ int main() {
   }
   cout << endl;
 
+  delete Sol1;
+  delete Sol2;
+  delete Sol3;
+
   return 0;
 }
 
 
 double *SolveExplicite(int n){
   double h = 1.0/n;
-  double *Sortie = (double *) calloc(n,sizeof(double));
+  double *Sortie = new double[n];
   Sortie[0] = 1;
   for(int i=1;i<n;++i){
       Sortie[i] = Sortie[i-1]*(2*h*h*(i-1) + 1);
@@ -52,7 +49,7 @@ double *SolveExplicite(int n){
 
 double *SolveImplicite(int n){
   double h = 1.0/n;
-  double *Sortie = (double *) calloc(n,sizeof(double));
+  double *Sortie = new double[n];
   Sortie[0] = 1;
   for(int i=1;i<n;++i){
       Sortie[i] = Sortie[i-1]/(1 + 2*h*h*i);
@@ -62,7 +59,7 @@ double *SolveImplicite(int n){
 
 double *SolveExpliciteEDO(int n){
   double h = 1.0/n;
-  double *Sortie = (double *) calloc(n,sizeof(double));
+  double *Sortie = new double[n];
   Sortie[0] = 1;
   for(int i=1;i<n;++i){
       Sortie[i] = Sortie[i-1]*(50*h*cos((i-1)*h));
