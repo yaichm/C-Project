@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/lj_plot.dir/src/lj_plot.cxx.o -o lj_plot  /usr/lib/x86_64-linux-gnu/libpython3.10.so 
