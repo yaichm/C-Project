@@ -77,6 +77,16 @@ Vecteur& Vecteur::operator-=(const Vecteur& v) {
     return *this;
 }
 
+double Vecteur::get_x() {
+    return x;
+}
+double Vecteur::get_y() {
+    return y;
+}
+double Vecteur::get_z() {
+    return z;
+}
+
 // Fonctions amies
 ostream& operator<<(ostream& out, const Vecteur& v) {
     for (int i = 0; i < 3; i++) {

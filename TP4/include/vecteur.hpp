@@ -44,6 +44,10 @@ public:
 
     friend std::ostream &operator<<(std::ostream &out, const Vecteur &v);
     friend std::istream &operator>>(std::istream &in, Vecteur &v);
+    double get_x();
+    double get_y();
+    double get_z();
+
     
 };
 
