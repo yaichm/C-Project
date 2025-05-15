@@ -58,14 +58,15 @@ Vecteur ParticuleA::setForce(const Vecteur& new_force) {
  * @brief Sauvegarde la position actuelle de la particule dans un fichier.
  * @param file Fichier de sortie.
  */
-bool ParticuleA::save(std::ofstream &file) const {
-    if(file){
-        file << vect_position << "\n";  // Utilisation de l'opérateur << pour afficher le vecteur
+bool ParticuleA::save(std::ofstream &file, double dt, int indice) const {
+    if (file) {
+        file << "Vecteur position de la particule " << indice << " à " << dt << " s : ";
+        file << vect_position << "\n";  // Affiche le vecteur
         return true;
     }
     return false;
-
 }
+
 
 /**
  * @brief Affiche les coordonnées de la particule dans la console.

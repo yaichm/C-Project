@@ -11,8 +11,9 @@ class Univers{
         double sigma;
         vector<vector<size_t>> voisinage;
         size_t nb_cellules;
+        double epsilon;
     public:
-        Univers(const vector<double>& dimensions, double sigma, double r_cut);
+        Univers(const vector<double>& dimensions, double sigma, double r_cut, double epsilon);
         void setSigma(double sigma );
         void setR_cut(double r_cut);
 
@@ -27,7 +28,7 @@ class Univers{
 
         vector<Vecteur> force_cells(vector<ParticuleA> &parList);
 
-        vector<vector<Vecteur>> Univers::algoStr(double dt, double dfin,
+        vector<vector<Vecteur>> algoStr(double dt, double dfin,
         vector<ParticuleA> &parList,
         int n, ofstream &file);
                 

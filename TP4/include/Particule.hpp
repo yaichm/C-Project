@@ -80,7 +80,7 @@ public:
      * @brief Sauvegarde la position actuelle de la particule dans un fichier.
      * @param file Fichier de sortie.
      */
-    bool save(std::ofstream &file) const;
+    bool save(std::ofstream &file, double dt, int indice) const;
 
     /**
      * @brief Affiche les coordonnées de la particule dans la console.

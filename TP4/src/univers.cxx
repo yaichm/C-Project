@@ -5,9 +5,10 @@ using namespace std;
 
 
 
-Univers::Univers(const vector<double>& dimension, double sigma, double r_cut){
+Univers::Univers(const vector<double>& dimension, double sigma, double r_cut, double epsilon){
     this->r_cut = r_cut;
     this->sigma = sigma;
+    this->epsilon = epsilon;
 
     this->dim = dimension.size();
     dimensions.resize(dim);
@@ -180,9 +181,11 @@ vector<Vecteur> Univers::force_cells(std::vector<ParticuleA> &parList) {
         if (d2 > rc2) continue; // en dehors du cutoff
 
         // 4) Calcul du potentiel de Lennard-Jones / force
-        double inv_r2 = 1.0 / d2;
-        double inv_r6 = inv_r2*inv_r2*inv_r2;
-        double fcoef = 24.0 * (inv_r6*inv_r6 - inv_r6) * inv_r2;
+        double r = sqrt(d2);
+        double sr = sigma / r;
+        double sr6 = pow(sr, 6);
+
+        double fcoef = 24.0  *epsilon* (1.0 / (r*r)) * sr6 * (1 - 2 * sr6);
         Vecteur f(dx*fcoef, dy*fcoef, dz*fcoef);
 
         // 5) Action–réaction
@@ -212,7 +215,7 @@ vector<vector<Vecteur>>Univers::algoStr(double dt, double dfin,
     parList[i].setForce(F[i]);
 
     // 2) Intégration Störmer–Verlet (positions)
-    file << "Nouvelle position\n";
+    file << "Nouvelle position à " << t << "\n";
     vector<double> old_fx, old_fy, old_fz;
     vector<Vecteur> snapshot;
     for (int i = 0; i < n; ++i) {
@@ -223,7 +226,7 @@ vector<vector<Vecteur>>Univers::algoStr(double dt, double dfin,
 
         parList[i].setPosition(dt);
         snapshot.push_back(parList[i].getPosition());
-        parList[i].save(file);
+        parList[i].save(file, t+dt, i);
     }
 
     // 3) Réaffectation avant recalcul des forces

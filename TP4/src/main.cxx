@@ -1,45 +1,53 @@
 #include <iostream>
-#include "Univers.hpp"
-#include "cellule.hpp"
+#include <vector>
+#include <fstream>
+#include <cmath>
+#include "vecteur.hpp"  
+#include "Particule.hpp"  
+#include "Univers.hpp"     
+#include "cellule.hpp"     
 
 using namespace std;
 
 int main() {
-    // Dimensions de l'univers (par exemple, 10.0 unités de long pour chaque dimension)
-    std::vector<double> dimensions = {10.0, 10.0};
-    double sigma = 1.0;   // Valeur arbitraire pour sigma
-    double r_cut = 2.0;   // Valeur arbitraire pour r_cut (distance maximale d'interaction)
+    vector<double> dimension = {250, 40};
+    double sigma = 1.0;   // Paramètre de Lennard-Jones (sigma)
+    double r_cut = 2.5*sigma;   // Rayon de coupure
+    double epsilon = 5.0;
 
-    // Création d'un objet Univers avec les paramètres définis
-    Univers monUnivers(dimensions, sigma, r_cut);
+    // Créez l'univers
+    Univers univers(dimension, sigma, r_cut, epsilon);
 
-    // Affichage des dimensions et du nombre total de cellules
-    std::cout << "Dimensions de l'univers : ";
-    for (auto dim : monUnivers.getDimensions()) {
-        std::cout << dim << " ";
+    const int N = 160;  // Exemple de 8 particules
+    vector<ParticuleA> particules;
+
+    // Création des particules dans l'univers
+    for (int i = 0; i < N; ++i) {
+        double x = static_cast<double>(i) / N;
+        double y = static_cast<double>(i) / N;
+        double z = 0;
+        Vecteur position(x, y, z);
+        Vecteur vitesse(0, 10.0, 0.0);
+        Vecteur force(0.0, 0.0, 0.0);
+        double masse = 1.0;
+        particules.push_back(ParticuleA(masse, position, vitesse, force));
     }
-    std::cout << std::endl;
 
-    std::cout << "Nombre total de cellules : " << monUnivers.getTotalCells() << std::endl;
+    // univers.assignCells(particules);
 
-    // Affichage des indices de la première cellule
-    vector<size_t> idx = {1, 0};
-    auto& cellule0 = monUnivers.cellule(idx);
-    cout << "Indices de la cellule (1, 0) : ";
-    for (auto val : cellule0.getIndices()) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
+    ofstream file("trajectoires.txt");
 
-    // Test de la méthode getVoisinage pour la première cellule
-    monUnivers.buildVoisinage(monUnivers.getTotalCells());
+    double dt = 0.05;  // Pas de temps
+    double dfin = 19.5; // Durée de la simulation (en temps)
 
-    // printer les voisins de la premiere cellule
-    size_t indx = 8;
-    for (auto var : monUnivers.getVoisinage(indx))
-    {
-        cout << "Le voisin \n";
-        cout << var <<endl;
-    }
+    vector<vector<Vecteur>> trajectoires = univers.algoStr(dt, dfin, particules, N, file);
+
+    // for (const auto& trajectoire : trajectoires) {
+    //     for (const auto& pos : trajectoire) {
+    //         cout << "Position: (" << pos[0] << ", " << pos[1] << ", " << pos[2] << ")" << endl;
+    //     }
+    // }
+
+    file.close();
     return 0;
 }

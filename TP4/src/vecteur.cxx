@@ -79,7 +79,6 @@ Vecteur& Vecteur::operator-=(const Vecteur& v) {
 
 // Fonctions amies
 ostream& operator<<(ostream& out, const Vecteur& v) {
-    out << "Vecteur : ";
     for (int i = 0; i < 3; i++) {
         out << v[i] << " ";
     }

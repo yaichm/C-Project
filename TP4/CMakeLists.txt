@@ -9,4 +9,6 @@ add_executable(main
     src/main.cxx
     src/univers.cxx
     src/cellule.cxx
+    src/particule.cxx 
+    src/vecteur.cxx
 )
